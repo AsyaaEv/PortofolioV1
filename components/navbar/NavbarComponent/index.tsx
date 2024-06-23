@@ -30,7 +30,7 @@ export default function Navbar() {
     return (
         <>
             <Dialog>
-                <nav className={`w-full ${isOpen ? 'h-screen flex justify-start items-start py-4 container transition-all' : '  p-4 transition-all'} justify-start  items-center flex flex-col transition-all fixed bg-white dark:bg-black dark:bg-opacity-0 md:relative md:max-w-[15rem] md:pt-[5rem]`}>
+                <nav className={`w-full ${isOpen ? 'h-screen flex justify-start items-start py-4 container transition-all' : ' border-b-2 dark:border-white/10 md:border-b-0 p-4 transition-all'} justify-start  items-center flex flex-col transition-all fixed bg-white dark:bg-black md:dark:bg-opacity-0 md:relative md:max-w-[15rem] md:pt-[5rem] z-50`}>
                     <div className={`flex w-full transition-all md:justify-between md:flex-col`}>
                         <header className={`w-full flex gap-2 items-center transition-all md:flex-col md:gap-0`}>
                             <div className="hidden md:block absolute px-4">
@@ -49,16 +49,16 @@ export default function Navbar() {
                                 <h1 className="font-bold dark:text-white transition ">Anggun Rasya E</h1>
                                 <SealCheck size={22} weight="fill" className="text-blue-400"></SealCheck>
                             </div>
-                            <div className="hidden md:flex pb-4 border-b-[1px] w-full justify-center">
-                                <h1>@syaa.ev</h1>
+                            <div className="hidden md:flex pb-4 border-b-[1px] dark:border-white/10 w-full justify-center dark:text-white">
+                                <h1 >@syaa.ev</h1>
                             </div>
                         </header>
-                        <div className="md:w-full flex justify-center items-center z-10 pb-4 border-b-[1px]">
+                        <div className="md:w-full flex justify-center items-center z-10 pb-4 border-b-[1px] dark:border-white/10">
                             <ul className="hidden md:flex gap-2 flex-col w-full mt-4">
                                 <Link href='/'>
-                                    <li className={`flex  gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/' ? 'bg-black/10' : 'hover:bg-black/15'} hover:scale-[1.05]`}>
+                                    <li className={`flex  gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'} hover:scale-[1.05]`}>
                                         <div className=" flex items-center justify-end">
-                                            <HouseLine size={20}></HouseLine>
+                                            <HouseLine size={20} className="dark:text-white"></HouseLine>
                                         </div>
                                         <div className=" w-full flex items-center justify-start">
                                             <h1 className="dark:text-white group-hover:translate-x-1 transition-all border-black/10 dark:border-white/30 pb-1 text-lg">Beranda</h1>
@@ -66,9 +66,9 @@ export default function Navbar() {
                                     </li>
                                 </Link>
                                 <Link href='/about'>
-                                    <li className={`flex  gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/about' ? 'bg-black/10' : 'hover:bg-black/15'} hover:scale-[1.05]`}>
+                                    <li className={`flex  gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/about' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'} hover:scale-[1.05]`}>
                                         <div className=" flex items-center justify-end">
-                                            <IdentificationCard size={20}></IdentificationCard>
+                                            <IdentificationCard size={20} className="dark:text-white"></IdentificationCard>
                                         </div>
                                         <div className=" w-full flex items-center justify-start">
                                             <h1 className="dark:text-white group-hover:translate-x-1 transition-all border-black/10 dark:border-white/30 pb-1 text-lg">Tentang</h1>

@@ -1,12 +1,14 @@
 'use client'
-import Navbar from "@/components/navbar/NavbarComponent"
 import NavbarLayoutView from "@/components/navbar/NavbarLayout/NavbarLayout";
+import Landing from "./components/Landing";
+import Skill from "./components/Skill";
 export default function Home() {
   
   return (
     <>
       <NavbarLayoutView >
-        <h1>lolii</h1>
+        <Landing />
+        <Skill />
       </NavbarLayoutView>
     </>
   )

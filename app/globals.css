@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
     :root {
       --background: 0 0% 100%;
@@ -26,7 +25,7 @@
       --ring: 240 5.9% 10%;
       --radius: 0.5rem;
     }
-  
+    
     .dark {
       --background: 240 10% 3.9%;
       --foreground: 0 0% 98%;
@@ -46,12 +45,16 @@
       --destructive-foreground: 0 0% 98%;
       --border: 240 3.7% 15.9%;
       --input: 240 3.7% 15.9%;
-      --ring: 240 4.9% 83.9%;
+      --ring: 240 4.9% 83.9%; 
     }
-
+    
   }
-
+  
   ::-webkit-scrollbar {
     display: none;
   }
-  
+
+  @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+  *{
+    font-family: 'Sora', sans-serif;
+  }
