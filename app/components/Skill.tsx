@@ -9,7 +9,7 @@ import { SiAxios, SiBootstrap, SiCsharp, SiCss3, SiGithub, SiHtml5, SiJavascript
 export default function Skill() {
     return (
         <>
-            <main className="w-full flex flex-col mt-4 pb-8 border-b-2 dark:border-white/10 dark:text-white">
+            <main className="w-full flex flex-col mt-4 pb-8 border-b-2 dark:border-white/15 dark:text-white">
                 <header className="w-full flex flex-col gap-2 leading-3">
                     <div className="w-full flex gap-2 items-center font-semibold text-lg">
                         <Code weight="bold" />

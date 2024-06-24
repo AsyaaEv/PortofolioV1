@@ -30,7 +30,7 @@ export default function Navbar() {
     return (
         <>
             <Dialog>
-                <nav className={`w-full ${isOpen ? 'h-screen flex justify-start items-start py-4 container transition-all' : ' border-b-2 dark:border-white/10 md:border-b-0 p-4 transition-all'} justify-start  items-center flex flex-col transition-all fixed bg-white dark:bg-black md:dark:bg-opacity-0 md:relative md:max-w-[15rem] md:pt-[5rem] z-50`}>
+                <nav className={`w-full ${isOpen ? 'h-screen flex justify-start items-start py-4 container transition-all' : ' border-b-2 dark:border-white/15 md:border-b-0 p-4 transition-all'} justify-start  items-center flex flex-col transition-all fixed bg-white dark:bg-black md:dark:bg-opacity-0 md:relative md:max-w-[15rem] md:pt-[5rem] z-50`}>
                     <div className={`flex w-full transition-all md:justify-between md:flex-col`}>
                         <header className={`w-full flex gap-2 items-center transition-all md:flex-col md:gap-0`}>
                             <div className="hidden md:block absolute px-4">
@@ -100,8 +100,8 @@ export default function Navbar() {
                             </Link>
                             <Link href='/about'>
                                 <li className={`flex gap-2 py-2 items-center w-full px-4 rounded-[10px] hover:cursor-pointer hover:bg-black/5 group dark:hover:bg-white/15 transition duration-500 ease-in-out ${pathname === '/about' ? 'bg-black/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
-                                    <IdentificationBadge size={20} className="dark:text-white transition duration-500 ease-in-out"></IdentificationBadge>
-                                    <h1 className="group-hover:translate-x-1 transition-all dark:text-white duration-500 ease-in-out">Beranda</h1>
+                                    <IdentificationCard size={20} className="dark:text-white transition duration-500 ease-in-out"></IdentificationCard>
+                                    <h1 className="group-hover:translate-x-1 transition-all dark:text-white duration-500 ease-in-out">Tentang</h1>
                                 </li>
                             </Link>
                         </ul>
