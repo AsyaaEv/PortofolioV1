@@ -15,14 +15,14 @@ export default function Bio() {
 
     return (
         <>
-            <main className="w-full flex flex-col border-b-2 pb-4">
+            <main className="w-full flex flex-col border-b-2 pb-4 dark:text-white dark:border-white/15">
                 <header className="w-full">
                     <div className="w-full flex gap-2 items-center text-lg font-semibold">
                         <IdentificationCard weight="bold" />
                         <h1>Tentang Saya</h1>
                     </div>
                     <div className="">
-                        <h1 className="text-zinc-600">Kepo sama saya?, kuy stalking kebawah!!</h1>
+                        <h1 className="text-zinc-600 dark:text-zinc-400">Kepo sama saya?, kuy stalking kebawah!!</h1>
                     </div>
                 </header>
                 <section className="w-full flex justify-center items-center mt-8">

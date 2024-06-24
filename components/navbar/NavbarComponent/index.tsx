@@ -30,7 +30,7 @@ export default function Navbar() {
     return (
         <>
             <Dialog>
-                <nav className={`w-full ${isOpen ? 'h-screen flex justify-start items-start py-4 container transition-all' : ' border-b-2 dark:border-white/15 md:border-b-0 p-4 transition-all'} justify-start  items-center flex flex-col transition-all fixed bg-white dark:bg-black md:dark:bg-opacity-0 md:relative md:max-w-[15rem] md:pt-[5rem] z-50`}>
+                <nav className={`w-full ${isOpen ? 'h-screen flex justify-start items-start py-4 container' : ' border-b-2 dark:border-white/15 md:border-b-0 p-4'} justify-start  items-center flex flex-col transition-all fixed bg-white dark:bg-black md:dark:bg-opacity-0 md:relative md:max-w-[15rem] md:pt-[5rem] z-50`}>
                     <div className={`flex w-full transition-all md:justify-between md:flex-col`}>
                         <header className={`w-full flex gap-2 items-center transition-all md:flex-col md:gap-0`}>
                             <div className="hidden md:block absolute px-4">
@@ -82,26 +82,26 @@ export default function Navbar() {
                         </footer>
                         <aside className={`${isOpen ? 'flex transition-all' : 'transition-all'}  flex items-center justify-end gap-4 w-auto md:absolute md:ml-[9.7rem] md:mt-12 md:bg-white md:w-auto md:rounded-[10px] md:drop-shadow-xl`}>
                             {useDarkMode().isDarkMode ? (
-                                <CloudMoon className="hover:cursor-pointer dark:text-white dark:bg-zinc-800 rounded-[10px] p-2 size-10 transition duration-500 ease-in-out" onClick={toggleDarkMode}></CloudMoon>
+                                <CloudMoon className="hover:cursor-pointer dark:text-white dark:bg-zinc-800 rounded-[10px] p-2 size-10 transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all" onClick={toggleDarkMode}></CloudMoon>
                             ) : (
-                                <CloudSun className="hover:cursor-pointer text-black bg-white rounded-[10px] p-2 size-10 transition duration-500 ease-in-out" onClick={toggleDarkMode}></CloudSun>
+                                <CloudSun className="hover:cursor-pointer text-black bg-white rounded-[10px] p-2 size-10 transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all" onClick={toggleDarkMode}></CloudSun>
                             )}
-                            <Hamburger size={32} className="hover:cursor-pointer dark:text-white transition duration-500 ease-in-out md:hidden" onClick={() => setIsOpen(!isOpen)}></Hamburger>
+                            <Hamburger size={32} className="hover:cursor-pointer dark:text-white transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all md:hidden" onClick={() => setIsOpen(!isOpen)}></Hamburger>
                         </aside>
                     </div>
-                    <hr className={`${isOpen ? 'block border-b-[0.1px] w-full transition-all mt-3 dark:border-zinc-800' : 'hidden transition-all'} transition duration-500 ease-in-out`} />
-                    <main className={`${isOpen ? 'block  w-full transition-all mt-4' : 'hidden transition-all'} transition duration-500 ease-in-out`}>
+                    <hr className={`${isOpen ? 'block border-b-[0.1px] w-full transition-all mt-3 dark:border-zinc-800' : 'hidden transition-all'} transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all`} />
+                    <main className={`${isOpen ? 'block  w-full transition-all mt-4' : 'hidden transition-all'} transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all`}>
                         <ul className="flex flex-col gap-2">
                             <Link href="/">
-                                <li className={`flex gap-2 py-2 items-center  w-full px-4 rounded-[10px] hover:cursor-pointer group dark:bg-white/10 transition duration-500 ease-in-out ${pathname === '/' ? 'bg-black/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
-                                    <House size={20} className="dark:text-white transition duration-500 ease-in-out"></House>
-                                    <h1 className="group-hover:translate-x-1 transition-all dark:text-white  duration-500 ease-in-out">Beranda</h1>
+                                <li className={`flex gap-2 py-2 items-center  w-full px-4 rounded-[10px] hover:cursor-pointer group dark:bg-white/10 transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all ${pathname === '/' ? 'bg-black/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
+                                    <House size={20} className="dark:text-white transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all"></House>
+                                    <h1 className="group-hover:translate-x-1 transition-all dark:text-white  duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all">Beranda</h1>
                                 </li>
                             </Link>
                             <Link href='/about'>
-                                <li className={`flex gap-2 py-2 items-center w-full px-4 rounded-[10px] hover:cursor-pointer hover:bg-black/5 group dark:hover:bg-white/15 transition duration-500 ease-in-out ${pathname === '/about' ? 'bg-black/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
-                                    <IdentificationCard size={20} className="dark:text-white transition duration-500 ease-in-out"></IdentificationCard>
-                                    <h1 className="group-hover:translate-x-1 transition-all dark:text-white duration-500 ease-in-out">Tentang</h1>
+                                <li className={`flex gap-2 py-2 items-center w-full px-4 rounded-[10px] hover:cursor-pointer hover:bg-black/5 group dark:hover:bg-white/15 transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all ${pathname === '/about' ? 'bg-black/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
+                                    <IdentificationCard size={20} className="dark:text-white transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all"></IdentificationCard>
+                                    <h1 className="group-hover:translate-x-1 transition-all dark:text-white duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all">Tentang</h1>
                                 </li>
                             </Link>
                         </ul>
