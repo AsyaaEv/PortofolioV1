@@ -9,7 +9,7 @@ export default function Minat() {
         <>
             <main className="w-full flex-col mt-8 dark:text-white pb-8 border-b-2 dark:border-white/15">
                 <div className="w-full flex gap-2 items-center text-lg font-semibold">
-                    <Person weight="bold " />
+                    <Person weight="bold" />
                     <h1>Minat</h1>
                 </div>
                 <div className="">
