@@ -10,7 +10,7 @@ export default function About() {
             <NavbarLayoutView>
                 <Bio />
                 <Minat />
-                {/* <Prestasi /> */}
+                <Prestasi />
             </NavbarLayoutView>
         </>
     )
