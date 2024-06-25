@@ -3,6 +3,8 @@ import Image from "next/image";
 import logoOsis from '../../../public/logoOsis.png'
 import logoPassus from '../../../public/logoPassus.png'
 import logoJurnalistik from '../../../public/logoJurnalistik.png'
+import logoFosis from '../../../public/logoFosis.png'
+import logoPpi from '../../../public/logoPpi.webp'
 
 export default function Minat() {
     return (
@@ -41,6 +43,24 @@ export default function Minat() {
                         <div className="w-full flex justify-center flex-col">
                             <h1>Jurnalistik Anwa Sanskara</h1>
                             <h1 className="text-black/50 dark:text-zinc-400">2022-2024</h1>
+                        </div>
+                    </div>
+                    <div className="w-full p-4 border-2 rounded-[10px] flex gap-5 dark:border-0 dark:bg-white/15">
+                        <div className="">
+                            <Image src={logoPpi} width={60} alt="" className="dark:brightness-75 pointer-events-none"></Image>
+                        </div>
+                        <div className="w-full flex justify-center flex-col">
+                            <h1>Purna Paskibraka Indonesia</h1>
+                            <h1 className="text-black/50 dark:text-zinc-400">2023</h1>
+                        </div>
+                    </div>
+                    <div className="w-full p-4 border-2 rounded-[10px] flex gap-5 dark:border-0 dark:bg-white/15">
+                        <div className="">
+                            <Image src={logoFosis} width={60} alt="" className="dark:brightness-75 pointer-events-none"></Image>
+                        </div>
+                        <div className="w-full flex justify-center flex-col">
+                            <h1>Forum Osis Jepara</h1>
+                            <h1 className="text-black/50 dark:text-zinc-400">2024-2025</h1>
                         </div>
                     </div>
                 </section>

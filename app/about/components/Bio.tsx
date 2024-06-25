@@ -8,6 +8,11 @@ import {
 import { IdentificationCard} from "@phosphor-icons/react"
 import React from "react"
 
+import AsyaBatman from '../../../public/AsyaBatman.jpeg'
+import AsyaTK from '../../../public/AsyaTK.jpeg'
+import AsyaPaskib from '../../../public/AsyaPaskib.jpeg'
+import Image from "next/image"
+
 export default function Bio() {
     const plugin = React.useRef(
         Autoplay({ delay: 3000, stopOnInteraction: true })
@@ -32,12 +37,12 @@ export default function Bio() {
                         onMouseEnter={plugin.current.stop}
                         onMouseLeave={plugin.current.reset}>
                         <CarouselContent>
-                            {Array.from({ length: 5 }).map((_, index) => (
+                            {[AsyaBatman, AsyaTK, AsyaPaskib].map((image, index) => (
                                 <CarouselItem key={index}>
                                     <div className="p-1">
                                         <Card>
                                             <CardContent className="flex aspect-square items-center justify-center p-6">
-                                                <span className="text-4xl font-semibold">{index + 1}</span>
+                                                <Image src={image} alt={`Image ${index + 1}`} className="object-cover w-full h-full pointer-events-none" />
                                             </CardContent>
                                         </Card>
                                     </div>

@@ -17,7 +17,7 @@ import { CloudMoon, CloudSun, Hamburger, House, HouseLine, IdentificationBadge, 
 import { useState } from 'react';
 import { useDarkMode } from "../../darkmode/DarkModeContext";
 import Image from "next/image";
-import vercelImage from '../../../public/adit.jpg'
+import PP from '../../../public/AsyaPP.jpeg'
 import bgImage from '../../../public/bg.webp'
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -41,7 +41,7 @@ export default function Navbar() {
                             </div>
                             <DialogTrigger >
                                 <Avatar className={`${isOpen ? 'size-20 transition-all' : 'transition-all md:size-20 md:mt-10 md:outline md:outline-3 md:outline-white dark:outline-black'}`}>
-                                    <Image src={vercelImage} alt="@shadcn" className="object-cover " />
+                                    <Image src={PP} alt="@shadcn" className="object-cover " />
 
                                 </Avatar>
                             </DialogTrigger>
@@ -93,13 +93,13 @@ export default function Navbar() {
                     <main className={`${isOpen ? 'block  w-full transition-all mt-4' : 'hidden transition-all'} transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all`}>
                         <ul className="flex flex-col gap-2">
                             <Link href="/">
-                                <li className={`flex gap-2 py-2 items-center  w-full px-4 rounded-[10px] hover:cursor-pointer group dark:bg-white/10 transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all ${pathname === '/' ? 'bg-black/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
+                                <li className={`flex gap-2 py-2 items-center  w-full px-4 rounded-[10px] hover:cursor-pointer group  transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all ${pathname === '/' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
                                     <House size={20} className="dark:text-white transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all"></House>
                                     <h1 className="group-hover:translate-x-1 transition-all dark:text-white  duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all">Beranda</h1>
                                 </li>
                             </Link>
                             <Link href='/about'>
-                                <li className={`flex gap-2 py-2 items-center w-full px-4 rounded-[10px] hover:cursor-pointer hover:bg-black/5 group dark:hover:bg-white/15 transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all ${pathname === '/about' ? 'bg-black/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
+                                <li className={`flex gap-2 py-2 items-center w-full px-4 rounded-[10px] hover:cursor-pointer hover:bg-black/5 group dark:hover:bg-white/15 transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all ${pathname === '/about' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
                                     <IdentificationCard size={20} className="dark:text-white transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all"></IdentificationCard>
                                     <h1 className="group-hover:translate-x-1 transition-all dark:text-white duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all">Tentang</h1>
                                 </li>
@@ -108,7 +108,7 @@ export default function Navbar() {
                     </main>
                 </nav>
                 <DialogContent className="bg-white border-none p-0">
-                    <Image src={vercelImage} width={1080} alt="" />
+                    <Image src={PP} width={1080} alt="" />
                 </DialogContent>
             </Dialog>
         </>
