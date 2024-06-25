@@ -1,10 +1,10 @@
 import { Person } from "@phosphor-icons/react";
 import Image from "next/image";
-import logoOsis from '../../../public/logoOsis.png'
 import logoPassus from '../../../public/logoPassus.png'
 import logoJurnalistik from '../../../public/logoJurnalistik.png'
 import logoFosis from '../../../public/logoFosis.png'
 import logoPpi from '../../../public/logoPpi.webp'
+import logoOsisSMK from '../../../public/logoOsisSMK.png'
 
 export default function Minat() {
     return (
@@ -20,7 +20,7 @@ export default function Minat() {
                 <section className="w-full flex flex-col gap-4 mt-4">
                     <div className="w-full p-4 border-2 rounded-[10px] flex gap-5 dark:border-0 dark:bg-white/15">
                         <div className="">
-                            <Image src={logoOsis} width={60} alt="" className="dark:brightness-75 pointer-events-none"></Image>
+                            <Image src={logoOsisSMK} width={60} alt="" className="dark:brightness-75 pointer-events-none"></Image>
                         </div>
                         <div className="w-full flex justify-center flex-col">
                             <h1>Organisasi Siswa Intra Sekolah</h1>
