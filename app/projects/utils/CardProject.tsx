@@ -24,7 +24,7 @@ export default function CardProject({image, title, desc} : CardProjectProps) {
                         <h1 className="text-lg font-semibold">{title}</h1>
                     </div>
                     <div className="w-full mt-2">
-                        <h1 className="text-sm">{desc}</h1>
+                        <h1 className="text-sm text-zinc-600 dark:text-zinc-400">{desc}</h1>
                     </div>
                 </div>
             </div>

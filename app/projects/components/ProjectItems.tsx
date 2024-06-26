@@ -4,8 +4,8 @@ import CardProject from "../utils/CardProject";
 export default function ProjectItems() {
     return (
         <>
-            <main className="w-full flex flex-col">
-                <header className="w-full pb-4 border-b-2">
+            <main className="w-full flex flex-col dark:text-white">
+                <header className="w-full pb-4 border-b-2 dark:border-white/15">
                     <div className="w-full flex gap-2 items-center text-lg font-semibold">
                         <BoxArrowDown weight="bold" />
                         <h1>Projek Saya</h1>
