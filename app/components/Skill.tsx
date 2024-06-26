@@ -6,6 +6,8 @@ import {
     TooltipTrigger,
   } from "@/components/ui/tooltip"
 import { SiAxios, SiBootstrap, SiCsharp, SiCss3, SiGithub, SiHtml5, SiJavascript, SiKotlin, SiLaravel, SiMysql, SiNextdotjs, SiPhosphoricons, SiPhp, SiPostgresql, SiPrisma, SiReact, SiTailwindcss, SiTypescript } from "react-icons/si";
+import Image from "next/image";
+import ToolTipSkills from "../about/utils/ToolTipSkills";
 export default function Skill() {
     return (
         <>
@@ -20,10 +22,14 @@ export default function Skill() {
                     </div>
                 </header>
                 <section className="w-full mt-8 flex justify-center items-center gap-6 flex-wrap md:gap-x-16">
+                    {/* <ToolTipSkills 
+                        image="js.svg"
+                        title="JavaScript"
+                    /> */}
                     <TooltipProvider>
                         <Tooltip delayDuration={10}>
                             <TooltipTrigger>
-                                <SiJavascript className="text-yellow-500 text-3xl"/>
+                            <SiJavascript className="text-yellow-500 text-3xl"/>
                             </TooltipTrigger>
                             <TooltipContent >
                                 <p>JavaScript</p>

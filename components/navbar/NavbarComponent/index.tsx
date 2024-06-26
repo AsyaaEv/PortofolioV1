@@ -13,7 +13,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 
-import { CloudMoon, CloudSun, Hamburger, House, HouseLine, IdentificationBadge, IdentificationCard, SealCheck } from "@phosphor-icons/react"
+import { Archive, CloudMoon, CloudSun, Hamburger, House, HouseLine, IdentificationBadge, IdentificationCard, SealCheck } from "@phosphor-icons/react"
 import { useState } from 'react';
 import { useDarkMode } from "../../darkmode/DarkModeContext";
 import Image from "next/image";
@@ -75,6 +75,16 @@ export default function Navbar() {
                                         </div>
                                     </li>
                                 </Link>
+                                <Link href='/projects'>
+                                    <li className={`flex  gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/projects' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'} hover:scale-[1.05]`}>
+                                        <div className=" flex items-center justify-end">
+                                            <Archive size={20} className="dark:text-white"></Archive>
+                                        </div>
+                                        <div className=" w-full flex items-center justify-start">
+                                            <h1 className="dark:text-white group-hover:translate-x-1 transition-all border-black/10 dark:border-white/30 pb-1 text-lg">Projek</h1>
+                                        </div>
+                                    </li>
+                                </Link>
                             </ul>
                         </div>
                         <footer className="hidden md:flex w-full justify-center items-center text-gray-500 mt-2">
@@ -102,6 +112,12 @@ export default function Navbar() {
                                 <li className={`flex gap-2 py-2 items-center w-full px-4 rounded-[10px] hover:cursor-pointer hover:bg-black/5 group dark:hover:bg-white/15 transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all ${pathname === '/about' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
                                     <IdentificationCard size={20} className="dark:text-white transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all"></IdentificationCard>
                                     <h1 className="group-hover:translate-x-1 transition-all dark:text-white duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all">Tentang</h1>
+                                </li>
+                            </Link>
+                            <Link href='/projects'>
+                                <li className={`flex gap-2 py-2 items-center w-full px-4 rounded-[10px] hover:cursor-pointer hover:bg-black/5 group dark:hover:bg-white/15 transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all ${pathname === '/projects' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
+                                    <Archive size={20} className="dark:text-white transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all"></Archive>
+                                    <h1 className="group-hover:translate-x-1 transition-all dark:text-white duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all">Projek</h1>
                                 </li>
                             </Link>
                         </ul>
