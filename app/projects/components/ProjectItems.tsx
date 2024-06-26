@@ -17,7 +17,7 @@ export default function ProjectItems() {
                 <section className="w-full grid grid-cols-1 gap-4 mt-4 md:grid-cols-2">
                     <a href="https://barangque.tefa-studio.com">
                         <CardProject
-                            image="barangque.png"
+                            image="/projects/barangque.png"
                             title="BarangQue"
                             desc="BarangQue adalah platform peminjaman barang di SMK Negeri 1 Bangsri."
                         />

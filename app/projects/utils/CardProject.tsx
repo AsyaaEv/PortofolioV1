@@ -17,7 +17,7 @@ export default function CardProject({image, title, desc} : CardProjectProps) {
                     <div className="w-full h-[60%] bg-black/50 absolute z-50 hidden group-hover:flex justify-center items-center">
                         <h1 className="text-white font-semibold flex justify-center items-center gap-2 text-lg">Liat Projek <ArrowBendUpRight weight="bold" /></h1>
                     </div>
-                    <Image src={`/projects/${image} `} width={1080} height={1080} alt="" loading="lazy" className="object-cover w-full h-full rounded-tl-[10px] rounded-tr-[10px] pointer-events-none -z-10" />
+                    <Image src={image} width={1080} height={1080} alt="" loading="lazy" className="object-cover w-full h-full rounded-tl-[10px] rounded-tr-[10px] pointer-events-none -z-10" />
                 </div>
                 <div className="w-full h-auto flex-col px-4 dark:text-white">
                     <div className="w-full mt-2">
