@@ -11,6 +11,7 @@ import React from "react"
 import AsyaBatman from '../../../public/AsyaBatman.jpeg'
 import AsyaTK from '../../../public/AsyaTK.jpeg'
 import AsyaPaskib from '../../../public/AsyaPaskib.jpeg'
+import AsyaRPL from '../../../public/AsyaRPL.jpeg'
 import Image from "next/image"
 import Link from "next/link"
 
@@ -38,7 +39,7 @@ export default function Bio() {
                         onMouseEnter={plugin.current.stop}
                         onMouseLeave={plugin.current.reset}>
                         <CarouselContent>
-                            {[AsyaBatman, AsyaTK, AsyaPaskib].map((image, index) => (
+                            {[AsyaBatman, AsyaTK, AsyaRPL, AsyaPaskib].map((image, index) => (
                                 <CarouselItem key={index}>
                                     <div className="p-1">
                                         <Card>
