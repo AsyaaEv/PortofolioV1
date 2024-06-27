@@ -1,7 +1,12 @@
+
 import { Archive, Question } from "@phosphor-icons/react"
 import Link from "next/link"
 
+
+
 export default function Contact() {
+    
+
     return (
         <>
             <main className="w-full flex justify-center items-center flex-col mt-4 border-b-2 dark:border-white/15 dark:text-white pb-4">
@@ -35,5 +40,5 @@ export default function Contact() {
                 </header>
             </main>
         </>
-    )
+    );
 }

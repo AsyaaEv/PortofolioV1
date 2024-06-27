@@ -1,7 +1,24 @@
 import { Ranking } from "@phosphor-icons/react";
 import Card from "../utils/CardPrestasi";
 
+import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 export default function Prestasi() {
+    const router = useRouter();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight + 50) {
+                router.push('/projects')
+            }
+            
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [router]);
+
     return (
         <>
             <main className="w-full flex-col mt-8 dark:text-white border-b-2 pb-4 dark:border-white/15">
@@ -94,6 +111,5 @@ export default function Prestasi() {
                 </section>
             </main>
         </>
-
-    )
+    );
 }

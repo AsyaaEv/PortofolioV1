@@ -22,6 +22,11 @@ export default function ProjectItems() {
                             desc="BarangQue adalah platform peminjaman barang di SMK Negeri 1 Bangsri."
                         />
                     </a>
+                    <CardProject
+                        image="/projects/portofoliov1.png"
+                        title="Portofolio V1"
+                        desc="Merupakan projek website portofolio pertama saya"
+                    />
                 </section>
             </main>
         </>

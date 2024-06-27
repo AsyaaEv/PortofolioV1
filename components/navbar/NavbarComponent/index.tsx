@@ -45,10 +45,12 @@ export default function Navbar() {
 
                                 </Avatar>
                             </DialogTrigger>
-                            <div className="flex gap-2 w-full md:justify-center items-center md:text-xl z-10">
-                                <h1 className="font-bold dark:text-white transition ">Anggun Rasya E</h1>
-                                <SealCheck size={22} weight="fill" className="text-blue-400"></SealCheck>
-                            </div>
+                            <Link href='/' >
+                                <div className="flex gap-2 w-full md:justify-center items-center md:text-xl z-10">
+                                    <h1 className="font-bold dark:text-white transition ">Anggun Rasya E</h1>
+                                    <SealCheck size={22} weight="fill" className="text-blue-400"></SealCheck>
+                                </div>
+                            </Link>
                             <div className="hidden md:flex pb-4 border-b-[1px] dark:border-white/10 w-full justify-center dark:text-white">
                                 <h1 >@syaa.ev</h1>
                             </div>
