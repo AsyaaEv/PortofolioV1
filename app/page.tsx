@@ -5,6 +5,7 @@ import Skill from "./components/Skill";
 import Contact from "./components/Contact";
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { middleware } from "../middleware";
 export default function Home() {
   const router = useRouter();
 

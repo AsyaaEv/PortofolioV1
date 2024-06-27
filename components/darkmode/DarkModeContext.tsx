@@ -1,4 +1,5 @@
 "use client"
+import { SessionProvider } from 'next-auth/react';
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 interface DarkModeContextType {
@@ -8,7 +9,7 @@ interface DarkModeContextType {
 
 const DarkModeContext = createContext<DarkModeContextType | undefined>(undefined);
 
-export const DarkModeProvider: React.FC<{children: ReactNode}> = ({ children }) => {
+export const DarkModeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
@@ -22,7 +23,9 @@ export const DarkModeProvider: React.FC<{children: ReactNode}> = ({ children }) 
 
   return (
     <DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
-      {children}
+      <SessionProvider>
+        {children}
+      </SessionProvider>
     </DarkModeContext.Provider>
   );
 };

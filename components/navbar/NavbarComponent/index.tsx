@@ -13,7 +13,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 
-import { Archive, CloudMoon, CloudSun, Hamburger, House, HouseLine, IdentificationBadge, IdentificationCard, SealCheck } from "@phosphor-icons/react"
+import { Archive, CloudMoon, CloudSun, Cpu, Hamburger, House, HouseLine, IdentificationBadge, IdentificationCard, SealCheck } from "@phosphor-icons/react"
 import { useState } from 'react';
 import { useDarkMode } from "../../darkmode/DarkModeContext";
 import Image from "next/image";
@@ -45,50 +45,71 @@ export default function Navbar() {
 
                                 </Avatar>
                             </DialogTrigger>
-                            <Link href='/' >
-                                <div className="flex gap-2 w-full md:justify-center items-center md:text-xl z-10">
+                            <div className="flex gap-2 w-full md:justify-center items-center md:text-xl z-10">
+                                <Link href='/' >
                                     <h1 className="font-bold dark:text-white transition ">Anggun Rasya E</h1>
+                                </Link>
+                                <Link href='/dashboard'>
                                     <SealCheck size={22} weight="fill" className="text-blue-400"></SealCheck>
-                                </div>
-                            </Link>
+                                </Link>
+                            </div>
                             <div className="hidden md:flex pb-4 border-b-[1px] dark:border-white/10 w-full justify-center dark:text-white">
                                 <h1 >@syaa.ev</h1>
                             </div>
                         </header>
-                        <div className="md:w-full flex justify-center items-center z-10 pb-4 border-b-[1px] dark:border-white/10">
+
+                        {/* view desktop */}
+                        <div className={`md:w-full flex justify-center items-center z-10 pb-4 border-b-[1px] dark:border-white/10 ${pathname !== '/dashboard' ? 'block' : 'hidden'}` }>
                             <ul className="hidden md:flex gap-2 flex-col w-full mt-4">
                                 <Link href='/'>
-                                    <li className={`flex  gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'} hover:scale-[1.05]`}>
-                                        <div className=" flex items-center justify-end">
+                                    <li className={`flex gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'} hover:scale-[1.05]`}>
+                                        <div className="flex items-center justify-end">
                                             <HouseLine size={20} className="dark:text-white"></HouseLine>
                                         </div>
-                                        <div className=" w-full flex items-center justify-start">
+                                        <div className="w-full flex items-center justify-start">
                                             <h1 className="dark:text-white group-hover:translate-x-1 transition-all border-black/10 dark:border-white/30 pb-1 text-lg">Beranda</h1>
                                         </div>
                                     </li>
                                 </Link>
                                 <Link href='/about'>
-                                    <li className={`flex  gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/about' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'} hover:scale-[1.05]`}>
-                                        <div className=" flex items-center justify-end">
+                                    <li className={`flex gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/about' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'} hover:scale-[1.05]`}>
+                                        <div className="flex items-center justify-end">
                                             <IdentificationCard size={20} className="dark:text-white"></IdentificationCard>
                                         </div>
-                                        <div className=" w-full flex items-center justify-start">
+                                        <div className="w-full flex items-center justify-start">
                                             <h1 className="dark:text-white group-hover:translate-x-1 transition-all border-black/10 dark:border-white/30 pb-1 text-lg">Tentang</h1>
                                         </div>
                                     </li>
                                 </Link>
                                 <Link href='/projects'>
-                                    <li className={`flex  gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/projects' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'} hover:scale-[1.05]`}>
-                                        <div className=" flex items-center justify-end">
+                                    <li className={`flex gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/projects' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'} hover:scale-[1.05]`}>
+                                        <div className="flex items-center justify-end">
                                             <Archive size={20} className="dark:text-white"></Archive>
                                         </div>
-                                        <div className=" w-full flex items-center justify-start">
+                                        <div className="w-full flex items-center justify-start">
                                             <h1 className="dark:text-white group-hover:translate-x-1 transition-all border-black/10 dark:border-white/30 pb-1 text-lg">Projek</h1>
                                         </div>
                                     </li>
                                 </Link>
                             </ul>
                         </div>
+
+                        {/* dashboard desktop*/}
+                        <div className={`md:w-full flex justify-center items-center z-10 pb-4 border-b-[1px] dark:border-white/10 ${pathname == '/dashboard' ? 'block' : 'hidden'}` }>
+                            <ul className="hidden md:flex gap-2 flex-col w-full mt-4">
+                                <Link href='/dashboard'>
+                                    <li className={`flex gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/dashboard' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'} hover:scale-[1.05]`}>
+                                        <div className="flex items-center justify-end">
+                                            <Cpu size={20} className="dark:text-white"></Cpu>
+                                        </div>
+                                        <div className="w-full flex items-center justify-start">
+                                            <h1 className="dark:text-white group-hover:translate-x-1 transition-all border-black/10 dark:border-white/30 pb-1 text-lg">Main</h1>
+                                        </div>
+                                    </li>
+                                </Link>
+                            </ul>
+                        </div>
+
                         <footer className="hidden md:flex w-full justify-center items-center text-gray-500 mt-2">
                             <p>&copy; Reasya | 2024</p>
                         </footer>
@@ -102,7 +123,10 @@ export default function Navbar() {
                         </aside>
                     </div>
                     <hr className={`${isOpen ? 'block border-b-[0.1px] w-full transition-all mt-3 dark:border-zinc-800' : 'hidden transition-all'} transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all`} />
-                    <main className={`${isOpen ? 'block  w-full transition-all mt-4' : 'hidden transition-all'} transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all`}>
+
+
+                    {/* view mobile*/}
+                    <main className={`${isOpen ? 'block  w-full transition-all mt-4' : 'hidden transition-all'} ${pathname !== '/dashboard' ? 'block' : 'hidden'} transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all`}>
                         <ul className="flex flex-col gap-2">
                             <Link href="/">
                                 <li className={`flex gap-2 py-2 items-center  w-full px-4 rounded-[10px] hover:cursor-pointer group  transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all ${pathname === '/' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
@@ -120,6 +144,18 @@ export default function Navbar() {
                                 <li className={`flex gap-2 py-2 items-center w-full px-4 rounded-[10px] hover:cursor-pointer hover:bg-black/5 group dark:hover:bg-white/15 transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all ${pathname === '/projects' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
                                     <Archive size={20} className="dark:text-white transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all"></Archive>
                                     <h1 className="group-hover:translate-x-1 transition-all dark:text-white duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all">Projek</h1>
+                                </li>
+                            </Link>
+                        </ul>
+                    </main>
+
+                    {/* dashboard mobile*/}
+                    <main className={`${isOpen ? 'block  w-full transition-all mt-4' : 'hidden transition-all'} ${pathname == '/dashboard' ? 'block' : 'hidden'} transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all`}>
+                        <ul className="flex flex-col gap-2">
+                            <Link href="/">
+                                <li className={`flex gap-2 py-2 items-center  w-full px-4 rounded-[10px] hover:cursor-pointer group  transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all ${pathname === '/' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
+                                    <House size={20} className="dark:text-white transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all"></House>
+                                    <h1 className="group-hover:translate-x-1 transition-all dark:text-white  duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all">Beranda</h1>
                                 </li>
                             </Link>
                         </ul>
