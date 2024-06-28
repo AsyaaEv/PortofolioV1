@@ -1,19 +1,21 @@
 "use client"
 import {
     Avatar,
-    AvatarFallback,
-    AvatarImage,
 } from "@/components/ui/avatar"
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogHeader,
-    DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
 
-import { Archive, CloudMoon, CloudSun, Cpu, Hamburger, House, HouseLine, IdentificationBadge, IdentificationCard, SealCheck } from "@phosphor-icons/react"
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion"
+
+import { Archive, CloudMoon, CloudSun, Code, Cpu, Hamburger, House, HouseLine, IdentificationBadge, IdentificationCard, SealCheck } from "@phosphor-icons/react"
 import { useState } from 'react';
 import { useDarkMode } from "../../darkmode/DarkModeContext";
 import Image from "next/image";
@@ -59,7 +61,7 @@ export default function Navbar() {
                         </header>
 
                         {/* view desktop */}
-                        <div className={`md:w-full flex justify-center items-center z-10 pb-4 border-b-[1px] dark:border-white/10 ${pathname !== '/dashboard' ? 'block' : 'hidden'}` }>
+                        <div className={`md:w-full flex justify-center items-center z-10 pb-4 border-b-[1px] dark:border-white/10 ${!pathname.startsWith('/dashboard') ? 'block' : 'hidden'}`}>
                             <ul className="hidden md:flex gap-2 flex-col w-full mt-4">
                                 <Link href='/'>
                                     <li className={`flex gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'} hover:scale-[1.05]`}>
@@ -95,7 +97,7 @@ export default function Navbar() {
                         </div>
 
                         {/* dashboard desktop*/}
-                        <div className={`md:w-full flex justify-center items-center z-10 pb-4 border-b-[1px] dark:border-white/10 ${pathname == '/dashboard' ? 'block' : 'hidden'}` }>
+                        <div className={`md:w-full flex justify-center items-center z-10 pb-4 border-b-[1px] dark:border-white/10 ${pathname.startsWith('/dashboard') ? 'block' : 'hidden'}`}>
                             <ul className="hidden md:flex gap-2 flex-col w-full mt-4">
                                 <Link href='/dashboard'>
                                     <li className={`flex gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/dashboard' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'} hover:scale-[1.05]`}>
@@ -107,6 +109,30 @@ export default function Navbar() {
                                         </div>
                                     </li>
                                 </Link>
+                                <Accordion type="single" collapsible className="w-full dark:text-white " >
+                                    <AccordionItem value="item-1" className="border-0" >
+                                        <AccordionTrigger className={` flex gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/dashboard/beranda' ? 'bg-black/10 dark:bg-white/10' : ''} hover:scale-[1.05]`}>
+                                            <div className="flex items-center justify-end">
+                                                <House size={20} className="dark:text-white"></House>
+                                            </div>
+                                            <div className="w-full flex items-center justify-start">
+                                                <h1 className="dark:text-white group-hover:translate-x-1 transition-all border-black/10 dark:border-white/30 pb-1 text-lg">Beranda</h1>
+                                            </div>
+                                        </AccordionTrigger>
+                                        <AccordionContent>
+                                            <Link href='/dashboard/beranda/skills' className="w-full mt-2 flex gap-2">
+                                                <li className={`flex gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/dashboard/beranda/skills' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'}`}>
+                                                    <div className="flex items-center justify-end">
+                                                        <Code size={20} className="dark:text-white"></Code>
+                                                    </div>
+                                                    <div className="w-full flex items-center justify-start">
+                                                        <h1 className="dark:text-white group-hover:translate-x-1 transition-all border-black/10 dark:border-white/30 pb-1 text-lg">Skills</h1>
+                                                    </div>
+                                                </li>
+                                            </Link>
+                                        </AccordionContent>
+                                    </AccordionItem>
+                                </Accordion>
                             </ul>
                         </div>
 
@@ -126,7 +152,7 @@ export default function Navbar() {
 
 
                     {/* view mobile*/}
-                    <main className={`${isOpen ? 'block  w-full transition-all mt-4' : 'hidden transition-all'} ${pathname !== '/dashboard' ? 'block' : 'hidden'} transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all`}>
+                    <main className={`${isOpen ? 'block  w-full transition-all mt-4' : 'hidden transition-all'} ${!pathname.startsWith('/dashboard') ? 'block' : 'hidden'} transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all`}>
                         <ul className="flex flex-col gap-2">
                             <Link href="/">
                                 <li className={`flex gap-2 py-2 items-center  w-full px-4 rounded-[10px] hover:cursor-pointer group  transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all ${pathname === '/' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
@@ -150,14 +176,38 @@ export default function Navbar() {
                     </main>
 
                     {/* dashboard mobile*/}
-                    <main className={`${isOpen ? 'block  w-full transition-all mt-4' : 'hidden transition-all'} ${pathname == '/dashboard' ? 'block' : 'hidden'} transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all`}>
+                    <main className={`${isOpen ? 'block  w-full transition-all mt-4' : 'hidden transition-all'} ${pathname.startsWith('/dashboard') ? 'block' : 'hidden'} transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all`}>
                         <ul className="flex flex-col gap-2">
-                            <Link href="/">
+                            <Link href="/dashboard">
                                 <li className={`flex gap-2 py-2 items-center  w-full px-4 rounded-[10px] hover:cursor-pointer group  transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all ${pathname === '/' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15'} hover:scale-[1.02]`}>
-                                    <House size={20} className="dark:text-white transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all"></House>
-                                    <h1 className="group-hover:translate-x-1 transition-all dark:text-white  duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all">Beranda</h1>
+                                    <Cpu size={20} className="dark:text-white transition duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all"></Cpu>
+                                    <h1 className="group-hover:translate-x-1 transition-all dark:text-white  duration-500 ease-in-out dark:duration-500 dark:ease-in-out dark:transition-all">Main</h1>
                                 </li>
                             </Link>
+                            <Accordion type="single" collapsible className="w-full dark:text-white " >
+                                <AccordionItem value="item-1" className="border-0 w-full " >
+                                    <AccordionTrigger className={` flex gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/dashboard/beranda' ? 'bg-black/10 dark:bg-white/10' : ''} hover:scale-[1.05]`}>
+                                        <div className="flex items-center justify-end">
+                                            <House size={20} className="dark:text-white"></House>
+                                        </div>
+                                        <div className="w-full flex items-center justify-start">
+                                            <h1 className="dark:text-white group-hover:translate-x-1 transition-all border-black/10 dark:border-white/30 pb-1 text-lg">Beranda</h1>
+                                        </div>
+                                    </AccordionTrigger>
+                                    <AccordionContent>
+                                        <Link href='/dashboard/beranda/skills' className="w-full mt-2 flex gap-2">
+                                            <li className={`w-full flex gap-2 justify-center items-center px-4 hover:cursor-pointer group transition md:w-full py-1 rounded-[10px] ${pathname === '/dashboard/beranda/skills' ? 'bg-black/10 dark:bg-white/10' : 'hover:bg-black/15 hover:dark:bg-white/15'}`}>
+                                                <div className="flex items-center justify-end">
+                                                    <Code size={20} className="dark:text-white"></Code>
+                                                </div>
+                                                <div className="w-full flex items-center justify-start">
+                                                    <h1 className="dark:text-white group-hover:translate-x-1 transition-all border-black/10 dark:border-white/30 pb-1 text-lg">Skills</h1>
+                                                </div>
+                                            </li>
+                                        </Link>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            </Accordion>
                         </ul>
                     </main>
                 </nav>

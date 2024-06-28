@@ -13,7 +13,7 @@ export default function NavbarLayoutView({
   const { data: session, status } = useSession()
 
   if (status === 'loading') {
-    return <div className="w-full h-screen flex justify-center items-center">
+    return <div className="w-full h-screen flex justify-center items-center ">
       <Loader2 size={50} className="animate-spin"/>
     </div> 
   }

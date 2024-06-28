@@ -3,7 +3,7 @@ import { Sora } from "next/font/google";
 import "./globals.css";
 import { DarkModeProvider } from "@/components/darkmode/DarkModeContext";
 import QueryProvider from "@/components/query-provider";
-import { SessionProvider } from "next-auth/react";
+import { Analytics } from '@vercel/analytics/react';
 
 const sora = Sora({ subsets: ["latin"] });
 
@@ -23,6 +23,7 @@ export default function RootLayout({
         <body className={`dark:bg-black transition-all duration-500`}>
           <QueryProvider>
             {children}
+            <Analytics />
           </QueryProvider>
         </body>
       </DarkModeProvider>
