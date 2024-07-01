@@ -36,7 +36,7 @@ export const authOptions : NextAuthOptions = {
 
                 return {
                     name:user.name,
-                    id:user.id.toString() // Konversi id menjadi string untuk mengatasi masalah tipe data
+                    id:user.id.toString()
                 }
             },
         }),
