@@ -30,7 +30,7 @@ import { useFormState } from "react-dom";
 
 interface addSkillProps {
     bahasa: string,
-    logo: File | undefined
+    logo: string
 }
 export default function SkillsSetting() {
     const invoices = [
@@ -47,33 +47,27 @@ export default function SkillsSetting() {
     const Formik = useFormik<addSkillProps>({
         initialValues: {
             bahasa: "",
-            logo: undefined,
+            logo: '',
         },
         onSubmit: async (values) => {
-            if (values.logo) {
-                const formData = new FormData();
-                formData.append('bahasa', values.bahasa);
-                formData.append('logo', values.logo);
-                formAction(formData);
-            } else {
-                console.error('Logo harus berupa file');
-            }
+            const formData = new FormData()
+            formData.append('bahasa', values.bahasa)
+            formData.append('logo', values.logo)
+            await formAction(formData)
         }
     })
 
     const [logoPreview, setLogoPreview] = useState('');
 
-    const handleLogoChange = (event: any) => {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                if (e && e.target) {
-                    setLogoPreview(e.target.result as string);
-                }
-            };
-            reader.readAsDataURL(file);
+    const handleLogoChange = (e: any) => {
+        let reader = new FileReader()
+        reader.onload = () => {
+            if(reader.readyState === 2){
+                Formik.setFieldValue('logo', reader.result)
+                setLogoPreview(reader.result as string)
+            }
         }
+        reader.readAsDataURL(e.target.files[0])
     };
 
     return (
