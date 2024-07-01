@@ -20,7 +20,7 @@ export default function Landing() {
                     </ul>
                 </div>
                 <section className="mt-4">
-                    <h1 className="leading-loose text-sm md:text-base">Saya adalah seorang full-stack developer dengan pengalaman luas dalam mengembangkan aplikasi web. Keahlian saya melibatkan integrasi teknologi front-end dan back-end untuk menciptakan solusi yang responsif dan inovatif. Saya senang bekerja dalam tim kolaboratif dan selalu mencari peluang untuk terus mengembangkan keterampilan dan pengetahuan saya dalam dunia pengembangan perangkat lunak.</h1>
+                    <h1 className="leading-loose text-sm md:text-base">Saya adalah seorang web developer dengan pengalaman luas dalam mengembangkan aplikasi web. Keahlian saya melibatkan integrasi teknologi front-end dan back-end untuk menciptakan solusi yang responsif dan inovatif. Saya senang bekerja dalam tim kolaboratif dan selalu mencari peluang untuk terus mengembangkan keterampilan dan pengetahuan saya dalam dunia pengembangan perangkat lunak.</h1>
                 </section>
                 <footer className="w-full flex items-center mt-4 ">
                     <button className="px-4 py-1 flex justify-center items-center gap-2 bg-black/10 dark:bg-white/10 rounded-[10px] outline-dashed text-sm outline-black/50 dark:outline-white/50">
